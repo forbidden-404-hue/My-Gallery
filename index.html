@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 15px;
+  background: black;
+  font-size: 22px;
+}
+
+.section-title {
+  padding: 10px 15px;
+  font-size: 18px;
+  background: #222;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.videos {
+  padding: 10px;
+}
+
+video {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+/* Image Zoom */
+.zoom {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.zoom img {
+  max-width: 95%;
+  max-height: 95%;
+}
+</style>
+</head>
+
+<body>
+
+<header>My Photo & Video Gallery</header>
+
+<!-- PHOTO SECTION -->
+<div class="section-title">📸 Photos</div>
+<div class="gallery">
+  <img src="venox._forge-20260105-0001.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0002.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0003.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0004.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0005.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0006.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0007.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0008.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0009.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0010.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0011.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0012.jpg" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0013.jpg" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0014.jpg" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0015.jpg" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0016.jpg" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0017.jpg" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0018.jpg" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0019.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0020.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0021.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0022.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0023.webp" onclick="zoomImage(this)">
+  <img src="venox._forge-20260105-0024.jpg" onclick="zoomImage(this)">
+  <img src="test.jpg" onclick="zoomImage(this)">
+</div>
+
+<!-- IMAGE ZOOM BOX -->
+<div class="zoom" id="zoomBox" onclick="closeZoom()">
+  <img id="zoomImg">
+</div>
+
+<script>
+function zoomImage(img) {
+  document.getElementById("zoomBox").style.display = "flex";
+  document.getElementById("zoomImg").src = img.src;
+}
+
+function closeZoom() {
+  document.getElementById("zoomBox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
