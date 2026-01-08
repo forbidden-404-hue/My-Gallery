@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <script>
+    (function() {
+      var password = "venox123";
+      var input = "";
+
+      while (true) {
+        input = prompt("Enter password to access this site:");
+
+        if (input === null) {
+          document.documentElement.innerHTML = "";
+          return;
+        }
+
+        if (input === password) {
+          return;
+        }
+
+        alert("Wrong password! Try again.");
+      }
+    })();
+  </script>
+  
 <meta charset="UTF-8">
 <title>My Gallery</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,29 +93,6 @@ video {
 </head>
 
 <body>
-  
-<script>
-  var password = "venox123";   // Yahan apna password likho
-  var input = "";
-
-  while (true) {
-    input = prompt("Enter password to access this site:");
-
-    // Agar user ne Cancel dabaya
-    if (input === null) {
-      window.location.href = "about:blank";  // site se bahar
-      break;
-    }
-
-    // Agar password sahi hai
-    if (input === password) {
-      break;  // site open ho jaayegi
-    }
-
-    // Agar password galat hai
-    alert("Wrong password! Try again.");
-  }
-</script>
   
 <header>My Photo & Video Gallery</header>
 
