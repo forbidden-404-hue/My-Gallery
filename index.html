@@ -72,20 +72,25 @@ video {
 <body>
   
 <script>
-  var password = "venox123";
-  var userInput;
+  var password = "venox123";   // Yahan apna password likho
+  var input = "";
 
-  do {
-    userInput = prompt("Enter password to access this site:");
-    if (userInput === null) {
-      document.body.innerHTML = "";
+  while (true) {
+    input = prompt("Enter password to access this site:");
+
+    // Agar user ne Cancel dabaya
+    if (input === null) {
+      window.location.href = "about:blank";  // site se bahar
       break;
     }
-  } while (userInput !== password);
 
-  if (userInput !== password) {
-    alert("Access denied!");
-    document.body.innerHTML = "";
+    // Agar password sahi hai
+    if (input === password) {
+      break;  // site open ho jaayegi
+    }
+
+    // Agar password galat hai
+    alert("Wrong password! Try again.");
   }
 </script>
   
