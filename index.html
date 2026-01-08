@@ -70,7 +70,25 @@ video {
 </head>
 
 <body>
+  
+<script>
+  var password = "venox123";
+  var userInput;
 
+  do {
+    userInput = prompt("Enter password to access this site:");
+    if (userInput === null) {
+      document.body.innerHTML = "";
+      break;
+    }
+  } while (userInput !== password);
+
+  if (userInput !== password) {
+    alert("Access denied!");
+    document.body.innerHTML = "";
+  }
+</script>
+  
 <header>My Photo & Video Gallery</header>
 
 <!-- PHOTO SECTION -->
